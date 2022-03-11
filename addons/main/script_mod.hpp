@@ -1,6 +1,5 @@
-// COMPONENT should be defined in the script_component.hpp and included BEFORE this hpp
 #define MAINPREFIX x
-#define PREFIX drone_info
+#define PREFIX turret_lock
 
 #include "script_version.hpp"
 
@@ -9,6 +8,6 @@
 #define VERSION_AR  MAJOR,MINOR,PATCHLVL,BUILD
 
 // MINIMAL required version for the Mod. Components can specify others..
-#define REQUIRED_VERSION 2.06
+#define REQUIRED_VERSION 2.08
 
-#define COMPONENT_NAME QUOTE(Drone Info)
+#define COMPONENT_NAME QUOTE(Turret Lock)

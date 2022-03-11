@@ -1,26 +1,21 @@
-**Drone Info** is a client side mod that makes a panel which displays the various measurements of the drone you are connected to. To move the display, use the in game UI layout editor under Options -> Game -> Layout.
-
-<h2>CBA Settings</h2>
-
-* **Enable Addon:** Allows the addons to be effectively toggled off if necessary.
-* **Display Name:** Allows the name of the drone to be shown.
-* **Display Fuel:** Allows the fuel levels of the drone to be shown.
-* **Display Speed:** Allows the speed of the drone to be shown.
-* **Display Altitude:** Allows the altitude of the drone to be shown.
-* **Display Direction:** Allows the direction/bearing of the drone to be shown..
-* **Display Position:** Allows the grid reference of the drone to be shown.
+**Turret Lock** is a client side mod that allows a vehicle's gunner to lock the turret close to wherever he is looking at the moment.
+If the mod can't properly detect where the gunner is looking, it will lock the turret looking forwards.
 
 <h2>CBA Keybinds</h2>
 
-* Press **Alt-U** to open the drone panel.
+* Press **Alt-U** to lock the turret.
+
+<h2>Known Incompatibility</h2>
+This means that it will just lock looking forwards:
+* Redd n Tanks: Gepard
 
 <h2>Links</h2>
 
-* [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2261363770)
-* [GitHub](https://github.com/johnb432/Drone-Info)
+* [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2777111000)
+* [GitHub](https://github.com/johnb432/Turret-Lock)
 
 <h2>Credit</h2>
 
 Mod by johnb43
 
-[Mod Icon](https://www.onlinewebfonts.com/icon/536439) from [Icon Fonts](http://www.onlinewebfonts.com/icon) which is licensed by CC BY 3.0.
+[Mod Icon](http://getdrawings.com/get-drawing#army-tank-drawing-61.jpg) from [Icon Fonts](http://www.onlinewebfonts.com/icon) which is licensed by CC BY-NC 4.0.

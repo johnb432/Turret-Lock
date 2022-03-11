@@ -1,5 +1,5 @@
-name = "Drone-Info"
-prefix = "drone_info"
+name = "Turret-Lock"
+prefix = "turret_lock"
 author = "johnb43"
 template = "cba"
 mainprefix = "x"
