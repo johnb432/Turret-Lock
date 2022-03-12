@@ -7,6 +7,7 @@ If the mod can't properly detect where the gunner is looking, it will lock the t
 
 <h2>Known Incompatibility</h2>
 This means that it will just lock looking forwards:
+
 * Redd n Tanks: Gepard
 
 <h2>Links</h2>
