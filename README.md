@@ -4,6 +4,7 @@ If the mod can't properly detect where the gunner is looking, it will lock the t
 <h2>CBA Keybinds</h2>
 
 * Press **Alt-U** to lock the turret.
+* Press **Ctrl-Alt-U** to lock the turret facing forward along hull.
 
 <h2>Known Incompatibility</h2>
 This means that it will just lock looking forwards:
