@@ -1,3 +1,8 @@
+# Changelog for Turret Lock 18.3.2022
+
+1.0.0.2
+- Improved turret locking.
+
 # Changelog for Turret Lock 15.3.2022
 
 1.0.0.1
