@@ -1,8 +1,9 @@
-**Turret Lock** is a client side mod that allows a vehicle's gunner to lock the turret close to wherever he is looking at the moment or to make the turret face forward along the hull.
+**Turret Lock** is a client side mod that allows users to lock turret stabilisation as well as to make the turret face forward along the hull.
+This does ***NOT*** lock the turret onto a target, it only locks the turret in a specific direction relative to the vehicle's hull.
 
 <h2>CBA Keybinds</h2>
 
-* Press **Alt-U** to lock the turret. Only works if player is in the "Gunner" view (using the sights).
+* Press **Alt-U** to lock the turret stabilisation. Only works if player is in the "Gunner" view (using the sights).
 * Press **Ctrl-Alt-U** to lock the turret facing forward along hull. Works in any view (1st person, 3rd person, etc.).
 
 <h2>Links</h2>
