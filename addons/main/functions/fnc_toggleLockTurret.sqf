@@ -37,10 +37,10 @@ if (isNull _helperUnit) then {
         private _posGunStart = _vehicle modelToWorldWorld (_vehicle selectionPosition (getText ([_vehicle, _turretPath] call CBA_fnc_getTurret >> "gunBeg")));
 
         if (_posGunStart isNotEqualTo [0, 0, 0]) then {
-            _helperUnit setPosASL ((AGLToASL positionCameraToWorld [0, 0, 1200]) vectorAdd (_posGunStart vectorDiff (AGLToASL positionCameraToWorld [0, 0, 0])));
+            _helperUnit setPosASL ((AGLToASL positionCameraToWorld [0, 0, 5000]) vectorAdd (_posGunStart vectorDiff (AGLToASL positionCameraToWorld [0, 0, 0])));
         } else {
             // If no gun is found, just get where they are looking at (not as accurate)
-            _helperUnit setPosASL (AGLToASL positionCameraToWorld [0, 0, 1200]);
+            _helperUnit setPosASL (AGLToASL positionCameraToWorld [0, 0, 5000]);
         };
     } else {
          _helperUnit setPosASL (_vehicle modelToWorldWorld [0, 200, 0]);
