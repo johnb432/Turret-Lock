@@ -1,3 +1,8 @@
+# Changelog for Turret Lock 8.12.2022
+
+1.0.0.5
+- Added the ability to lock onto targets. Must to enabled via the server's CBA settings.
+
 # Changelog for Turret Lock 26.11.2022
 
 1.0.0.4
