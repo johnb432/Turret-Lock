@@ -7,13 +7,14 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "cba_main",
-            "cba_xeh",
-            "A3_Data_F_AoW_Loadorder"
+            "cba_main"
         };
         author = "johnb43";
-        authors[] = {"johnb43"};
+        authors[] = {
+            "johnb43"
+        };
         url = "https://github.com/johnb432/Turret-Lock";
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

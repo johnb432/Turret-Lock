@@ -1,5 +1,4 @@
-#include "script_component.hpp"
-
+#include "..\script_component.hpp"
 /*
  * Author: johnb43
  * Toggles the lock on a turret.
@@ -8,7 +7,7 @@
  * 0: Type of locking <NUMBER>
  *
  * Return Value:
- * If to override default keybind. <BOOLEAN>
+ * Intercept keystroke <BOOL>
  *
  * Example:
  * 0 call turret_lock_main_fnc_toggleLockTurret;
@@ -22,8 +21,9 @@ if (!isNull curatorCamera || {_type in [LOCK_WHERE_LOOKING_AT, LOCK_TRACKING] &&
 
 private _player = call CBA_fnc_currentUnit;
 private _vehicle = objectParent _player;
+private _turretPath = _vehicle unitTurret _player;
 
-if (isNull _vehicle) exitWith {false};
+if (isNull _vehicle || {!(_turretPath in (allTurrets _vehicle))}) exitWith {false};
 
 private _vehicleType = typeOf _vehicle;
 private _isLockTracking = _type == LOCK_TRACKING;
@@ -44,7 +44,6 @@ if (isNil QGVAR(lastInput)) then {
     GVAR(lastInput) = _type;
 };
 
-private _turretPath = _vehicle unitTurret _player;
 private _helperUnit = _player getVariable [QGVAR(helperUnit), objNull];
 
 // This allows different type locking without having to toggle inbetween every time
@@ -66,8 +65,17 @@ if (isNil "_lockedTo" || {isNull _lockedTo}) then {
     // In tracking mode
     if (_isLockTracking) exitWith {
         private _targets = lineIntersectsObjs [AGLToASL positionCameraToWorld [0, 0, 0], AGLToASL screenToWorld [0.5, 0.5], _vehicle, objNull, true, 32];
+        private _target = _targets param [_targets findIf {_x isKindOf "AllVehicles"}, cursorObject];
 
-        _vehicle lockCameraTo [_targets param [_targets findIf {_x isKindOf "AllVehicles"}, cursorObject], _turretPath, false];
+        _vehicle lockCameraTo [_target, _turretPath, false];
+
+        if (!isNull _target) then {
+            [["Turret lock: Lock in tracking mode"], true] call CBA_fnc_notify;
+        } else {
+            [["Turret lock: Failed to lock in tracking mode"], true] call CBA_fnc_notify;
+        };
+
+        playSoundUI ["click"];
     };
 
     // In other locking modes
@@ -84,9 +92,15 @@ if (isNil "_lockedTo" || {isNull _lockedTo}) then {
                 // If no gun is found, just get where they are looking at (not as accurate)
                 _helperUnit setPosASL (AGLToASL positionCameraToWorld [0, 0, 5000]);
             };
+
+            [["Turret lock: Locked where looking at"], true] call CBA_fnc_notify;
+            playSoundUI ["click"];
         };
         case LOCK_FACING_FRONT: {
             _helperUnit setPosASL (_vehicle modelToWorldWorld [0, 200, 0]);
+
+            [["Turret lock: Locked towards front"], true] call CBA_fnc_notify;
+            playSoundUI ["click"];
         };
     };
 
@@ -107,11 +121,14 @@ if (isNil "_lockedTo" || {isNull _lockedTo}) then {
 } else {
     _vehicle lockCameraTo [objNull, _turretPath, false];
 
-    if (!isNull _helperUnit) then {
-        deleteVehicle _helperUnit;
+    if (isNull _helperUnit) exitWith {};
 
-        _player setVariable [QGVAR(helperUnit), nil];
-    };
+    deleteVehicle _helperUnit;
+
+    _player setVariable [QGVAR(helperUnit), nil];
+
+    [["Turret lock: Unlocked turret"], true] call CBA_fnc_notify;
+    playSoundUI ["click"];
 };
 
 true

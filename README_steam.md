@@ -42,7 +42,10 @@ If you want to whitelist all vehicles:
 [/list]
 
 [h2]Credit[/h2]
+[list]
+[*] [url=http://getdrawings.com/get-drawing#army-tank-drawing-61.jpg]Mod Icon[/url] from [url=http://www.onlinewebfonts.com/icon]Icon Fonts[/url] which is licensed by CC BY-NC 4.0
+[*] Mod by johnb43
+[/list]
 
-Mod by johnb43
-
-[url=http://getdrawings.com/get-drawing#army-tank-drawing-61.jpg]Mod Icon[/url] from [url=http://www.onlinewebfonts.com/icon]Icon Fonts[/url] which is licensed by CC BY 3.0.
+[h2]License[/h2]
+See LICENSE.

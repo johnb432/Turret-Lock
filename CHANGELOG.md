@@ -1,3 +1,8 @@
+# Changelog for Turret Lock 13.8.2024
+
+1.0.1.0
+- Added notifications.
+
 # Changelog for Turret Lock 8.12.2022
 
 1.0.0.5

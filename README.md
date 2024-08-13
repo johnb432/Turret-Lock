@@ -35,6 +35,9 @@ If you want to whitelist all vehicles:
 
 <h2>Credit</h2>
 
-Mod by johnb43
+* [Mod Icon](http://getdrawings.com/get-drawing#army-tank-drawing-61.jpg) from [Icon Fonts](http://www.onlinewebfonts.com/icon) which is licensed by CC BY-NC 4.0
+* Mod by johnb43
 
-[Mod Icon](http://getdrawings.com/get-drawing#army-tank-drawing-61.jpg) from [Icon Fonts](http://www.onlinewebfonts.com/icon) which is licensed by CC BY-NC 4.0.
+<h2>License</h2>
+
+See LICENSE.
