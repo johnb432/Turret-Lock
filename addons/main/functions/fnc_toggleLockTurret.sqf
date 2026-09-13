@@ -17,13 +17,17 @@
 
 params [["_type", LOCK_WHERE_LOOKING_AT, [0]]];
 
-if (!isNull curatorCamera || {_type in [LOCK_WHERE_LOOKING_AT, LOCK_TRACKING] && {cameraView != "GUNNER"}}) exitWith {false};
+if (!isNull curatorCamera || {_type in [LOCK_WHERE_LOOKING_AT, LOCK_TRACKING] && {cameraView != "GUNNER"}}) exitWith {
+    false // return
+};
 
 private _player = call CBA_fnc_currentUnit;
 private _vehicle = objectParent _player;
 private _turretPath = _vehicle unitTurret _player;
 
-if (isNull _vehicle || {!(_turretPath in (allTurrets _vehicle))}) exitWith {false};
+if (isNull _vehicle || {!(_turretPath in (allTurrets _vehicle))}) exitWith {
+    false // return
+};
 
 private _vehicleType = typeOf _vehicle;
 private _isLockTracking = _type == LOCK_TRACKING;
@@ -37,7 +41,12 @@ if (
 		(GVAR(blacklistVehicles) isEqualTo [] || {!(_vehicleType in GVAR(blacklistVehicles))}) &&
 		{GVAR(blacklistVehiclesInheritance) findIf {_vehicle isKindOf _x} == -1}
 	})
-) exitWith {false};
+) exitWith {
+    [[LLSTRING(lockedTrackingError)], true] call CBA_fnc_notify;
+    playSoundUI ["click"];
+
+    false // return
+};
 
 // Set what type was used the first time
 if (isNil QGVAR(lastInput)) then {
@@ -69,12 +78,7 @@ if (isNil "_lockedTo" || {isNull _lockedTo}) then {
 
         _vehicle lockCameraTo [_target, _turretPath, false];
 
-        if (!isNull _target) then {
-            [["Turret lock: Lock in tracking mode"], true] call CBA_fnc_notify;
-        } else {
-            [["Turret lock: Failed to lock in tracking mode"], true] call CBA_fnc_notify;
-        };
-
+        [[[LLSTRING(lockedTrackingSuccess), LLSTRING(lockedTrackingFailure)] select (isNull _target)], true] call CBA_fnc_notify;
         playSoundUI ["click"];
     };
 
@@ -93,13 +97,13 @@ if (isNil "_lockedTo" || {isNull _lockedTo}) then {
                 _helperUnit setPosASL (AGLToASL positionCameraToWorld [0, 0, 5000]);
             };
 
-            [["Turret lock: Locked where looking at"], true] call CBA_fnc_notify;
+            [[LLSTRING(lockedWhereLookingAt)], true] call CBA_fnc_notify;
             playSoundUI ["click"];
         };
         case LOCK_FACING_FRONT: {
             _helperUnit setPosASL (_vehicle modelToWorldWorld [0, 200, 0]);
 
-            [["Turret lock: Locked towards front"], true] call CBA_fnc_notify;
+            [[LLSTRING(lockedFront)], true] call CBA_fnc_notify;
             playSoundUI ["click"];
         };
     };
@@ -121,14 +125,19 @@ if (isNil "_lockedTo" || {isNull _lockedTo}) then {
 } else {
     _vehicle lockCameraTo [objNull, _turretPath, false];
 
+    if (_isLockTracking) exitWith {
+        [[LLSTRING(unlockedTracking)], true] call CBA_fnc_notify;
+        playSoundUI ["click"];
+    };
+
     if (isNull _helperUnit) exitWith {};
 
     deleteVehicle _helperUnit;
 
     _player setVariable [QGVAR(helperUnit), nil];
 
-    [["Turret lock: Unlocked turret"], true] call CBA_fnc_notify;
+    [[LLSTRING(unlockedTurret)], true] call CBA_fnc_notify;
     playSoundUI ["click"];
 };
 
-true
+true // return

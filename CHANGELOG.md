@@ -1,3 +1,9 @@
+# Changelog for Turret Lock 13.9.2026
+
+1.0.2.0
+- Added localisation.
+- Minor improvements.
+
 # Changelog for Turret Lock 13.8.2024
 
 1.0.1.0

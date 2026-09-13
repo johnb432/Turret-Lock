@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="turret_lock">
+    <Package name="main">
+        <Key ID="STR_turret_lock_main_keyBindLock">
+            <English>Toggle Turret Lock</English>
+        </Key>
+        <Key ID="STR_turret_lock_main_keyBindLockForward">
+            <English>Toggle Turret Lock (Facing Forward)</English>
+        </Key>
+        <Key ID="STR_turret_lock_main_keyBindLockTracking">
+            <English>Toggle Turret Lock (Tracking Mode)</English>
+        </Key>
+        <Key ID="STR_turret_lock_main_lockedFront">
+            <English>Turret lock: Locked towards front</English>
+        </Key>
+        <Key ID="STR_turret_lock_main_lockedTrackingError">
+            <English>Turret lock: Tracking mode not enabled for this vehicle</English>
+        </Key>
+        <Key ID="STR_turret_lock_main_lockedTrackingFailure">
+            <English>Turret lock: Failed to lock in tracking mode</English>
+        </Key>
+        <Key ID="STR_turret_lock_main_lockedTrackingSuccess">
+            <English>Turret lock: Locked in tracking mode</English>
+        </Key>
+        <Key ID="STR_turret_lock_main_lockedWhereLookingAt">
+            <English>Turret lock: Locked where looking at</English>
+        </Key>
+        <Key ID="STR_turret_lock_main_settingBlacklistInheritance">
+            <English>Blacklist Vehicles (with Inheritance)</English>
+        </Key>
+        <Key ID="STR_turret_lock_main_settingBlacklistInheritanceDesc">
+            <English>List of vehicles and all of their children that can't use the lock on and target tracking feature.</English>
+        </Key>
+        <Key ID="STR_turret_lock_main_settingBlacklistNoInheritance">
+            <English>Blacklist Vehicles (no Inheritance)</English>
+        </Key>
+        <Key ID="STR_turret_lock_main_settingBlacklistNoInheritanceDesc">
+            <English>List of vehicles that can't use the lock on and target tracking feature.</English>
+        </Key>
+        <Key ID="STR_turret_lock_main_settingWhitelistInheritance">
+            <English>Whitelist Vehicles (with Inheritance)</English>
+        </Key>
+        <Key ID="STR_turret_lock_main_settingWhitelistInheritanceDesc">
+            <English>List of vehicles and all of their children that can use the lock on and target tracking feature.</English>
+        </Key>
+        <Key ID="STR_turret_lock_main_settingWhitelistNoInheritance">
+            <English>Whitelist Vehicles (no Inheritance)</English>
+        </Key>
+        <Key ID="STR_turret_lock_main_settingWhitelistNoInheritanceDesc">
+            <English>List of vehicles that can use the lock on and target tracking feature.</English>
+        </Key>
+        <Key ID="STR_turret_lock_main_unlockedTracking">
+            <English>Turret lock: Unlocked turret in tracking mode</English>
+        </Key>
+        <Key ID="STR_turret_lock_main_unlockedTurret">
+            <English>Turret lock: Unlocked turret</English>
+        </Key>
+    </Package>
+</Project>
