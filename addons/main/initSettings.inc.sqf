@@ -1,7 +1,7 @@
 [
     QGVAR(whitelistVehiclesSetting),
     "EDITBOX",
-    ["Whitelist vehicles (no Inheritance)", "List of vehicles that can use the lock on and target tracking feature."],
+    [LSTRING(settingWhitelistNoInheritance), LSTRING(settingWhitelistNoInheritanceDesc)],
     COMPONENT_NAME,
     '[]',
     1,
@@ -18,7 +18,7 @@
 [
     QGVAR(whitelistVehiclesInheritanceSetting),
     "EDITBOX",
-    ["Whitelist vehicles (with Inheritance)", "List of vehicles and all of their children that can use the lock on and target tracking feature."],
+    [LSTRING(settingWhitelistInheritance), LSTRING(settingWhitelistInheritanceDesc)],
     COMPONENT_NAME,
     '[]',
     1,
@@ -35,7 +35,7 @@
 [
     QGVAR(blacklistVehiclesSetting),
     "EDITBOX",
-    ["Blacklist vehicles (no Inheritance)", "List of vehicles that can't use the lock on and target tracking feature."],
+    [LSTRING(settingBlacklistNoInheritance), LSTRING(settingBlacklistNoInheritanceDesc)],
     COMPONENT_NAME,
     '[]',
     1,
@@ -52,7 +52,7 @@
 [
     QGVAR(blacklistVehiclesInheritanceSetting),
     "EDITBOX",
-    ["Blacklist vehicles (with Inheritance)", "List of vehicles and all of their children that can't use the lock on and target tracking feature."],
+    [LSTRING(settingBlacklistInheritance), LSTRING(settingBlacklistInheritanceDesc)],
     COMPONENT_NAME,
     '[]',
     1,
